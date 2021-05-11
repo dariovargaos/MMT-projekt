@@ -1,0 +1,215 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(../images/backtothefuture/bg.jpg);
+  background-size: cover;
+}
+
+.header{
+  height: 10%;
+}
+
+.header-btn{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  float: right;
+  margin-top: 15px;
+  color: #fff;
+  background: #413c69;
+  font-weight: 600;
+  position: relative;
+  left: 150px;
+}
+
+.container a:hover{
+  color: white;
+}
+
+.movie-details{
+  margin: 3% 0;
+}
+
+.left-box{
+  color: white;
+  margin: 15px 0;
+  padding: 20px;
+
+}
+
+.casting img{
+  height: 100px;
+  width: 85px;
+  margin-right: 10px;
+  cursor: pointer;
+  box-shadow: -4px 4px 5px 0 #0a043c;
+  transition: 1s;
+  position: relative;
+  right: 100px;
+}
+
+.casting img:hover{
+  transform: translateY(-10px);
+}
+
+.left-box a{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 10px;
+  margin-top: 35px;
+  color: #fff;
+  background: #413c69;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  right: 100px;
+}
+
+.left-box a:hover{
+  color: white;
+}
+
+.movie-img{
+  height: 350px;
+  box-shadow: -4px 4px 5px 0 #0a043c;
+  position: fixed;
+  cursor: pointer;
+}
+
+.series{
+  position: relative;
+  right: 100px;
+}
+
+
+h3{
+  color: white;
+}
+
+.series img{
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: -4px 4px 5px 0 #0a043c;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.series img:hover{
+  transform: translateY(-10px);
+}
+
+h1{
+  color: #fff3e6;
+  position: relative;
+  right: 100px;
+}
+
+p{
+  color: #fff3e6;
+  position: relative;
+  right: 100px;
+}
+
+.video{
+  position: relative;
+  right: 100px;
+}
+
+.giphy{
+  position: absolute;
+  left: 530px;
+  top: 50px;
+}
+
+/*MODAL*/
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  transform: scale(1.2);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 333px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
