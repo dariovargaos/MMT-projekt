@@ -4,7 +4,6 @@ import App from "./App.jsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 //images
-import backgroundImage from "./assets/bg.jpg";
 
 const customTheme = extendTheme({
   styles: {

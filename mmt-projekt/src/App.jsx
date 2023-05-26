@@ -6,12 +6,13 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/home/Home";
-import RootLayout from "./layout/RootLayout";
+import Interstellar from "./pages/movies/Interstellar";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />
+    <Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/interstellar" element={<Interstellar />} />
     </Route>
   )
 );
