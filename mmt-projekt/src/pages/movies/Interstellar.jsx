@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   Box,
@@ -18,6 +18,7 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
+  textDecoration,
 } from "@chakra-ui/react";
 
 //images
@@ -40,28 +41,81 @@ export default function Interstellar() {
 
   return (
     <Flex bg={`url(${bgImage})`} bgSize="cover" h="100vh">
-      <Flex alignItems="flex-end">
-        <Box>
-          <Heading as="h1">Interstellar</Heading>
-          <Text>Watch movies online</Text>
-          <Text>4 stars 4.5</Text>
-          <Button>See IMDB</Button>
-          <Flex gap={10}>
-            <Link>
-              <Image src={Bttf} maxH="300px" maxW="auto" />
-            </Link>
-            <Link>
-              <Image src={Seven} maxH="300px" maxW="auto" />
-            </Link>
-          </Flex>
-        </Box>
-      </Flex>
+      <Box minW="400px" p="10px">
+        <Flex justify="space-between">
+          <VStack gap={3}>
+            <Heading as="h1" color="white">
+              Interstellar
+            </Heading>
+            <Text color="white">4 stars 4.5</Text>
+            <Button color="white" variant="outline" _hover={{ bg: "gray.700" }}>
+              See IMDB
+            </Button>
+            <Text color="white">See other Dario's favourite movies</Text>
+            <Flex gap={10}>
+              <Link>
+                <Image
+                  src={Bttf}
+                  maxH="200px"
+                  maxW="auto"
+                  borderRadius="5px"
+                  boxShadow="-4px 4px 5px 0 black"
+                  _hover={{
+                    transform: "scale(1.1)",
+                    transition: "0.3s",
+                  }}
+                />
+              </Link>
+              <Link>
+                <Image
+                  src={Seven}
+                  maxH="200px"
+                  maxW="auto"
+                  borderRadius="5px"
+                  boxShadow="-4px 4px 5px 0 black"
+                  _hover={{
+                    transform: "scale(1.1)",
+                    transition: "0.3s",
+                  }}
+                />
+              </Link>
+            </Flex>
+          </VStack>
+        </Flex>
+      </Box>
       <Spacer />
-      <Container minW="600px" backdropFilter="blur(2px)" centerContent>
-        <Flex mt="10px" maxW="400px">
-          <VStack>
-            <Image src={Poster} maxH="300px" maxW="150px" />
-            <Button onClick={() => openModal()}>See trailer</Button>
+      <Container minW="600px" backdropFilter="blur(2px)">
+        <Flex justify="flex-end" p="10px" color="white">
+          <NavLink to="/" _hover={{ textDecoration: "underline" }}>
+            Home
+          </NavLink>
+        </Flex>
+
+        <Flex
+          maxH="100vh"
+          maxW="600px"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <VStack gap={4}>
+            <Image
+              src={Poster}
+              maxH="300px"
+              maxW="auto"
+              borderRadius="5px"
+              _hover={{
+                transform: "scale(1.1)",
+                transition: "0.3s",
+              }}
+            />
+            <Button
+              onClick={() => openModal()}
+              color="white"
+              variant="outline"
+              _hover={{ bg: "gray.700" }}
+            >
+              See trailer
+            </Button>
             <Divider />
             <Text color="white">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
@@ -70,8 +124,8 @@ export default function Interstellar() {
               aspernatur, eius odit, minus distinctio.
             </Text>
             <Flex gap={8}>
-              <Avatar src={Matt} />
-              <Avatar src={Jessica} />
+              <Avatar title="Matt Damon" src={Matt} size="lg" />
+              <Avatar src={Jessica} size="lg" />
             </Flex>
           </VStack>
         </Flex>
