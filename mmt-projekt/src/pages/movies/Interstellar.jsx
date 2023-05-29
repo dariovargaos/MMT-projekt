@@ -47,52 +47,46 @@ export default function Interstellar() {
       bgSize="cover"
     >
       <GridItem colSpan={{ base: 6, lg: 4, xl: 4 }} minH={{ lg: "100vh" }}>
-        <Box minW="400px" p="10px">
-          <Flex justify="space-between">
-            <VStack gap={3}>
-              <Heading as="h1" color="white" size="3xl">
-                Interstellar
-              </Heading>
-              <Text color="white">4 stars 4.5</Text>
-              <Button
-                color="white"
-                variant="outline"
-                _hover={{ bg: "gray.700" }}
-              >
-                See IMDB
-              </Button>
-              <Text color="white">See other Dario's favourite movies</Text>
-              <Flex gap={10}>
-                <Link>
-                  <Image
-                    src={Bttf}
-                    maxH="200px"
-                    maxW="auto"
-                    borderRadius="5px"
-                    boxShadow="-4px 4px 5px 0 black"
-                    _hover={{
-                      transform: "scale(1.1)",
-                      transition: "0.3s",
-                    }}
-                  />
-                </Link>
-                <Link>
-                  <Image
-                    src={Seven}
-                    maxH="200px"
-                    maxW="auto"
-                    borderRadius="5px"
-                    boxShadow="-4px 4px 5px 0 black"
-                    _hover={{
-                      transform: "scale(1.1)",
-                      transition: "0.3s",
-                    }}
-                  />
-                </Link>
-              </Flex>
-            </VStack>
-          </Flex>
-        </Box>
+        <Flex minW="400px" p="10px">
+          <VStack gap={3}>
+            <Heading as="h1" color="white" size="3xl" letterSpacing="5px">
+              Interstellar
+            </Heading>
+            <Text color="white">4 stars 4.5</Text>
+            <Button color="white" variant="outline" _hover={{ bg: "gray.700" }}>
+              See IMDB
+            </Button>
+            <Text color="white">See other Dario's favourite movies</Text>
+            <Flex gap={10}>
+              <Link>
+                <Image
+                  src={Bttf}
+                  maxH="200px"
+                  maxW="auto"
+                  borderRadius="5px"
+                  boxShadow="-4px 4px 5px 0 black"
+                  _hover={{
+                    transform: "scale(1.1)",
+                    transition: "0.3s",
+                  }}
+                />
+              </Link>
+              <Link>
+                <Image
+                  src={Seven}
+                  maxH="200px"
+                  maxW="auto"
+                  borderRadius="5px"
+                  boxShadow="-4px 4px 5px 0 black"
+                  _hover={{
+                    transform: "scale(1.1)",
+                    transition: "0.3s",
+                  }}
+                />
+              </Link>
+            </Flex>
+          </VStack>
+        </Flex>
       </GridItem>
       <GridItem colSpan={{ base: 6, lg: 2, xl: 2 }}>
         <Container backdropFilter="blur(2px)">
