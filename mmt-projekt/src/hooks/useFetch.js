@@ -19,9 +19,7 @@ export const useFetch = (url) => {
         const data = await res.json();
 
         setIsPending(false);
-        setData(
-          data.sort((a, b) => a.name.common.localeCompare(b.name.common))
-        );
+        setData(data);
         setError(null);
       } catch (err) {
         if (err.name === "AbortError") {
