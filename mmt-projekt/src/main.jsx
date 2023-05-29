@@ -13,6 +13,9 @@ const customTheme = extendTheme({
         padding: "0",
         boxSizing: "border-box",
       },
+      "a:hover": {
+        textDecoration: "underline",
+      },
     },
   },
 });
