@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
-
 import {
   Box,
   Heading,
@@ -21,6 +20,9 @@ import {
   Grid,
   GridItem,
 } from "@chakra-ui/react";
+
+//components
+import Actors from "../../components/Actors";
 
 //images
 import Matt from "../../assets/interstellar/matt.jpg";
@@ -133,10 +135,12 @@ export default function Interstellar() {
                   </Button>
                   <Divider />
                   <Text color="white">{data.results[0].overview}</Text>
-                  <Flex gap={8}>
+                  <Text color="white">Actors:</Text>
+                  <Actors />
+                  {/* <Flex gap={8}>
                     <Avatar title="Matt Damon" src={Matt} size="lg" />
                     <Avatar src={Jessica} size="lg" />
-                  </Flex>
+                  </Flex> */}
                 </VStack>
               </Flex>
             </Container>
