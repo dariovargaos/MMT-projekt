@@ -31,10 +31,13 @@ export default function Interstellar() {
     "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Interstellar"
   );
 
-  const movieID = 157336;
+  // const movieID = 157336;
   const imageUrl = "https://image.tmdb.org/t/p/w1280";
 
   const [showModal, setShowModal] = useState(false);
+  if (data) {
+    console.log(data.results[0].id);
+  }
 
   const openModal = () => {
     setShowModal(true);
@@ -53,55 +56,53 @@ export default function Interstellar() {
           bgSize="cover"
         >
           <GridItem colSpan={{ base: 6, lg: 4, xl: 4 }} minH={{ lg: "100vh" }}>
-            <Flex minW="400px" p="10px">
-              <VStack gap={3}>
-                <Heading as="h1" color="white" size="3xl" letterSpacing="5px">
-                  {data.results[0].title}
-                </Heading>
-                <Text color="white">
-                  Release date: {data.results[0].release_date}
-                </Text>
-                <Text color="white">
-                  Audience score: {data.results[0].vote_average}/10 (based on{" "}
-                  {data.results[0].vote_count} votes)
-                </Text>
-                <Button
-                  color="white"
-                  variant="outline"
-                  _hover={{ bg: "gray.700" }}
-                >
-                  See IMDB
-                </Button>
-                <Text color="white">See other Dario's favourite movies</Text>
-                <Flex gap={10}>
-                  <Link>
-                    <Image
-                      src={Bttf}
-                      maxH="200px"
-                      maxW="auto"
-                      borderRadius="5px"
-                      boxShadow="-4px 4px 5px 0 black"
-                      _hover={{
-                        transform: "scale(1.1)",
-                        transition: "0.3s",
-                      }}
-                    />
-                  </Link>
-                  <Link>
-                    <Image
-                      src={Seven}
-                      maxH="200px"
-                      maxW="auto"
-                      borderRadius="5px"
-                      boxShadow="-4px 4px 5px 0 black"
-                      _hover={{
-                        transform: "scale(1.1)",
-                        transition: "0.3s",
-                      }}
-                    />
-                  </Link>
-                </Flex>
-              </VStack>
+            <Flex p="10px" direction="column" gap={4} align="start">
+              <Heading as="h1" color="white" size="3xl" letterSpacing="5px">
+                {data.results[0].title}
+              </Heading>
+              <Text color="white">
+                Release date: {data.results[0].release_date}
+              </Text>
+              <Text color="white">
+                Audience score: {data.results[0].vote_average}/10 (based on{" "}
+                {data.results[0].vote_count} votes)
+              </Text>
+              <Button
+                color="white"
+                variant="outline"
+                _hover={{ bg: "gray.700" }}
+              >
+                See IMDB
+              </Button>
+              <Text color="white">See other Dario's favourite movies</Text>
+              <Flex gap={10}>
+                <Link>
+                  <Image
+                    src={Bttf}
+                    maxH="200px"
+                    maxW="auto"
+                    borderRadius="5px"
+                    boxShadow="-4px 4px 5px 0 black"
+                    _hover={{
+                      transform: "scale(1.1)",
+                      transition: "0.3s",
+                    }}
+                  />
+                </Link>
+                <Link>
+                  <Image
+                    src={Seven}
+                    maxH="200px"
+                    maxW="auto"
+                    borderRadius="5px"
+                    boxShadow="-4px 4px 5px 0 black"
+                    _hover={{
+                      transform: "scale(1.1)",
+                      transition: "0.3s",
+                    }}
+                  />
+                </Link>
+              </Flex>
             </Flex>
           </GridItem>
           <GridItem colSpan={{ base: 6, lg: 2, xl: 2 }}>
@@ -134,7 +135,7 @@ export default function Interstellar() {
                   <Divider />
                   <Text color="white">{data.results[0].overview}</Text>
                   <Text color="white">Actors:</Text>
-                  <Actors movieID={movieID} />
+                  <Actors movieID={data.results[0].id} />
                 </VStack>
               </Flex>
             </Container>

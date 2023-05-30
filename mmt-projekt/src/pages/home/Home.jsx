@@ -112,8 +112,11 @@ export default function Home() {
               Birthplace: <Link to="https://grad-vinkovci.hr/hr">Vinkovci</Link>
             </Text>
             <Text>
-              Top Movies: <Link>Pineapple Express</Link>,
-              <Link>Star Wars: The Phantom Menace</Link>,
+              Top Movies: <Link to="/pineappleexpress">Pineapple Express</Link>,
+              <Link to="/starwarsthephantommenace">
+                Star Wars: The Phantom Menace
+              </Link>
+              ,
             </Text>
           </CardBody>
         </Card>

@@ -9,8 +9,6 @@ export default function Actors({ movieID }) {
 
   const imageUrl = "https://image.tmdb.org/t/p/w1280";
 
-  console.log(data);
-
   return (
     <Box>
       {isPending && <Text>Loading...</Text>}

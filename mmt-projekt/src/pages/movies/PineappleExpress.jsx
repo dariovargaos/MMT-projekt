@@ -26,9 +26,9 @@ import Actors from "../../components/Actors";
 //images
 import Bttf from "../../assets/backtothefuture/poster.jpg";
 import Seven from "../../assets/se7en/poster.jpg";
-export default function BackToTheFuture() {
+export default function PineappleExpress() {
   const { data, isPending, error } = useFetch(
-    "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Back+to+the+future"
+    "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Pineapple+express"
   );
 
   const imageUrl = "https://image.tmdb.org/t/p/w1280";
@@ -53,7 +53,7 @@ export default function BackToTheFuture() {
         >
           <GridItem colSpan={{ base: 6, lg: 4, xl: 4 }} minH={{ lg: "100vh" }}>
             <Flex p="10px" direction="column" gap={4} align="start">
-              <Heading as="h1" color="white" size="3xl" letterSpacing="3px">
+              <Heading as="h1" color="white" size="3xl" letterSpacing="4px">
                 {data.results[0].title}
               </Heading>
               <Text color="white">
@@ -70,7 +70,7 @@ export default function BackToTheFuture() {
               >
                 See IMDB
               </Button>
-              <Text color="white">See other Dario's favourite movies</Text>
+              <Text color="white">See other Matej's favourite movies</Text>
               <Flex gap={10}>
                 <Link>
                   <Image
@@ -150,7 +150,7 @@ export default function BackToTheFuture() {
                 <iframe
                   width="510"
                   height="315"
-                  src="https://www.youtube.com/embed/qvsgGtivCgs"
+                  src="https://www.youtube.com/embed/nPlnjlhd-ME"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
