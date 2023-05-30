@@ -73,7 +73,8 @@ export default function Home() {
             </Text>
             <Text>
               Top Movies: <Link to="/interstellar">Interstellar</Link>,{" "}
-              <Link>Se7en</Link>,<Link>Back to the Future</Link>
+              <Link to="/se7en">Se7en</Link>,
+              <Link to="/backtothefuture">Back to the Future</Link>
             </Text>
           </CardBody>
         </Card>

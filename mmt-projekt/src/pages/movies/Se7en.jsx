@@ -26,12 +26,12 @@ import Actors from "../../components/Actors";
 //images
 import Bttf from "../../assets/backtothefuture/poster.jpg";
 import Seven from "../../assets/se7en/poster.jpg";
-export default function Interstellar() {
+export default function Se7en() {
   const { data, isPending, error } = useFetch(
-    "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Interstellar"
+    "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Se7en"
   );
 
-  const movieID = 157336;
+  const movieID = 807;
   const imageUrl = "https://image.tmdb.org/t/p/w1280";
 
   const [showModal, setShowModal] = useState(false);
@@ -112,7 +112,7 @@ export default function Interstellar() {
                 </NavLink>
               </Flex>
               <Flex maxW="600px" justifyContent="center" alignItems="center">
-                <VStack gap={4}>
+                <VStack gap={3}>
                   <Image
                     src={`${imageUrl}${data.results[0].poster_path}`}
                     maxH="300px"
@@ -153,7 +153,7 @@ export default function Interstellar() {
                 <iframe
                   width="510"
                   height="315"
-                  src="https://www.youtube.com/embed/zSWdZVtXT7E"
+                  src="https://www.youtube.com/embed/znmZoVkCjpI"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
