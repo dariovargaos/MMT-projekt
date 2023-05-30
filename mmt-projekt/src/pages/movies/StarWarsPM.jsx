@@ -23,9 +23,6 @@ import {
 //components
 import Actors from "../../components/Actors";
 
-//images
-import Bttf from "../../assets/backtothefuture/poster.jpg";
-import Seven from "../../assets/se7en/poster.jpg";
 export default function StarWarsPM() {
   const { data, isPending, error } = useFetch(
     "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Star+wars+the+phantom+menace"
@@ -71,34 +68,21 @@ export default function StarWarsPM() {
                 See IMDB
               </Button>
               <Text color="white">See other Matej's favourite movies</Text>
-              <Flex gap={10}>
-                <Link>
-                  <Image
-                    src={Bttf}
-                    maxH="200px"
-                    maxW="auto"
-                    borderRadius="5px"
-                    boxShadow="-4px 4px 5px 0 black"
-                    _hover={{
-                      transform: "scale(1.1)",
-                      transition: "0.3s",
-                    }}
-                  />
-                </Link>
-                <Link>
-                  <Image
-                    src={Seven}
-                    maxH="200px"
-                    maxW="auto"
-                    borderRadius="5px"
-                    boxShadow="-4px 4px 5px 0 black"
-                    _hover={{
-                      transform: "scale(1.1)",
-                      transition: "0.3s",
-                    }}
-                  />
-                </Link>
-              </Flex>
+              <Link to="/pineappleexpress">
+                <Image
+                  src={
+                    "https://image.tmdb.org/t/p/w1280/6E50WjeOYjDZg9HXgPjYdGtY2jG.jpg"
+                  }
+                  maxH="200px"
+                  maxW="auto"
+                  borderRadius="5px"
+                  boxShadow="-4px 4px 5px 0 black"
+                  _hover={{
+                    transform: "scale(1.1)",
+                    transition: "0.3s",
+                  }}
+                />
+              </Link>
             </Flex>
           </GridItem>
           <GridItem colSpan={{ base: 6, lg: 2, xl: 2 }}>

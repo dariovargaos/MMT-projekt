@@ -23,9 +23,6 @@ import {
 //components
 import Actors from "../../components/Actors";
 
-//images
-import Bttf from "../../assets/backtothefuture/poster.jpg";
-import Seven from "../../assets/se7en/poster.jpg";
 export default function BackToTheFuture() {
   const { data, isPending, error } = useFetch(
     "https://api.themoviedb.org/3/search/movie?api_key=d1e74b3cbfd718ab444a8d8c776cb133&query=Back+to+the+future"
@@ -72,9 +69,11 @@ export default function BackToTheFuture() {
               </Button>
               <Text color="white">See other Dario's favourite movies</Text>
               <Flex gap={10}>
-                <Link>
+                <Link to="/interstellar">
                   <Image
-                    src={Bttf}
+                    src={
+                      "https://image.tmdb.org/t/p/w1280/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+                    }
                     maxH="200px"
                     maxW="auto"
                     borderRadius="5px"
@@ -85,9 +84,11 @@ export default function BackToTheFuture() {
                     }}
                   />
                 </Link>
-                <Link>
+                <Link to="/se7en">
                   <Image
-                    src={Seven}
+                    src={
+                      "https://image.tmdb.org/t/p/w1280/6yoghtyTpznpBik8EngEmJskVUO.jpg"
+                    }
                     maxH="200px"
                     maxW="auto"
                     borderRadius="5px"
