@@ -131,12 +131,7 @@ export default function Home() {
           2020./2021.
         </Text>
       </Box>
-      <Modal
-        isOpen={showModal}
-        onClose={closeModal}
-        isCentered
-        closeOnOverlayClick={false}
-      >
+      <Modal isOpen={showModal} onClose={closeModal} isCentered>
         <ModalOverlay />
         <ModalContent bg="rgba(0, 0, 0, 0.8)">
           <ModalCloseButton color="white" />

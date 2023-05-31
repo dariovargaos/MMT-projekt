@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Card,
+  CardHeader,
+  CardBody,
   Heading,
   Text,
   Flex,
@@ -18,6 +22,7 @@ import {
   ModalBody,
   Grid,
   GridItem,
+  Spinner,
 } from "@chakra-ui/react";
 
 //components
@@ -42,6 +47,16 @@ export default function BackToTheFuture() {
 
   return (
     <Box>
+      {isPending && (
+        <Spinner
+          thickness="4px"
+          speed="0.6s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
+      )}
+      {error && <Text>{error}</Text>}
       {data && (
         <Grid
           templateColumns="repeat(6, 1fr)"
@@ -50,24 +65,39 @@ export default function BackToTheFuture() {
         >
           <GridItem colSpan={{ base: 6, lg: 4, xl: 4 }} minH={{ lg: "100vh" }}>
             <Flex p="10px" direction="column" gap={4} align="start">
-              <Heading as="h1" color="white" size="3xl" letterSpacing="3px">
-                {data.results[0].title}
-              </Heading>
-              <Text color="white">
-                Release date: {data.results[0].release_date}
-              </Text>
-              <Text color="white">
-                Audience score: {data.results[0].vote_average}/10 (based on{" "}
-                {data.results[0].vote_count} votes)
-              </Text>
-              <Button
-                color="white"
-                variant="outline"
-                _hover={{ bg: "gray.700" }}
-              >
-                See IMDB
-              </Button>
-              <Text color="white">See other Dario's favourite movies</Text>
+              <Card bg="rgba(0, 0, 0, 0.3)" size="lg">
+                <CardHeader>
+                  <Heading as="h1" color="white" size="3xl" letterSpacing="5px">
+                    {data.results[0].title}
+                  </Heading>
+                </CardHeader>
+                <CardBody>
+                  <VStack gap={3} align="start">
+                    <Text color="white">
+                      Release date: {data.results[0].release_date}
+                    </Text>
+                    <Text color="white">
+                      Audience score: {data.results[0].vote_average}/10 (based
+                      on {data.results[0].vote_count} votes)
+                    </Text>
+                    <Button
+                      color="white"
+                      variant="outline"
+                      _hover={{ bg: "gray.700" }}
+                    >
+                      <Link to="https://www.imdb.com/title/tt0088763/">
+                        See IMDB
+                      </Link>
+                    </Button>
+                    <Flex align="center" gap={3}>
+                      <Text color="white">
+                        See other Dario's favourite movies
+                      </Text>
+                      <ArrowDownIcon color="white" />
+                    </Flex>
+                  </VStack>
+                </CardBody>
+              </Card>
               <Flex gap={10}>
                 <Link to="/interstellar">
                   <Image
@@ -105,12 +135,10 @@ export default function BackToTheFuture() {
           <GridItem colSpan={{ base: 6, lg: 2, xl: 2 }}>
             <Container backdropFilter="blur(3px)" minH="100vh">
               <Flex justify="flex-end" p="10px" color="white">
-                <NavLink to="/" _hover={{ textDecoration: "underline" }}>
-                  Home
-                </NavLink>
+                <NavLink to="/">Home</NavLink>
               </Flex>
               <Flex maxW="600px" justifyContent="center" alignItems="center">
-                <VStack gap={4}>
+                <VStack gap={3}>
                   <Image
                     src={`${imageUrl}${data.results[0].poster_path}`}
                     maxH="300px"
