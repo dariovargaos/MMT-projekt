@@ -5,3 +5,5 @@
 * On home page you can see some information about colleague and me.
 * You can click on our movie choice's for additional info about the movie.
 * API used for pulling data: https://developer.themoviedb.org/docs
+* Website is live here: https://favourite-movies-list.netlify.app/
+* *Currently working on responsiveness from smaller screens.
