@@ -15,6 +15,7 @@ import {
   ModalBody,
   Image,
   Flex,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 //images
@@ -35,10 +36,26 @@ export default function Home() {
     setSelectedPicture(null), setShowModal(false);
   };
 
+  const isSmallScreen = useBreakpointValue({
+    base: true,
+    md: false,
+  });
+
   return (
     <Flex bg={`url(${bgImage})`} direction="column" minH="100vh" bgSize="cover">
-      <Flex gap="20px" justify="center" align="center" flex="1">
-        <Card bg="rgba(0, 0, 0, 0.8)" color="white" size="lg">
+      <Flex
+        flexDir={isSmallScreen ? "column" : "row"}
+        gap="20px"
+        justify="center"
+        align="center"
+        flex="1"
+      >
+        <Card
+          w={isSmallScreen ? "95%" : ""}
+          bg="rgba(0, 0, 0, 0.7)"
+          color="white"
+          size="lg"
+        >
           <CardHeader display="flex" alignItems="center" gap="20px">
             <Avatar
               src={Dario}
@@ -78,7 +95,12 @@ export default function Home() {
             </Text>
           </CardBody>
         </Card>
-        <Card bg="rgba(0, 0, 0, 0.8)" color="white" size="lg">
+        <Card
+          w={isSmallScreen ? "95%" : ""}
+          bg="rgba(0, 0, 0, 0.7)"
+          color="white"
+          size="lg"
+        >
           <CardHeader display="flex" alignItems="center" gap="20px">
             <Avatar
               src={Matej}
@@ -127,7 +149,7 @@ export default function Home() {
           <Link to="https://loomen.carnet.hr/course/view.php?id=3626">
             Multimedijska tehnika
           </Link>{" "}
-          in <Link to="https://www.ferit.unios.hr/">FERIT</Link> Osijek
+          at <Link to="https://www.ferit.unios.hr/">FERIT</Link> Osijek
           2020./2021.
         </Text>
       </Box>
